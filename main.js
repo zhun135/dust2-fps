@@ -87,7 +87,7 @@ F(10,8,mat.floorMid,28,-0.05,-28);car(30,-32,0.5,[0xcc7722,0xddaa44]);lowWall(26
 F(10,8,mat.floorLongA,-44,-0.05,-38);tree(-42,-35);tree(-46,-39);tree(-40,-41);bench(-44,-36,0.3);bench(-47,-40,1.5);lowWall(-48,-36,4,0);lowWall(-42,-42,4,1.5);lowWall(-40,-35,3,0);
 F(12,10,mat.floorCT,-38,-0.05,-8);crate(1.5,1.5,-35,0,-10);crate(1.2,1,-40,0,-12);crate(1,0.8,-42,0,-7);sandbags(-36,0.1,-4,6);barrel(-40,0,-9);barrel(-38,0,-12);lowWall(-42,-4,3,0.5);lowWall(-34,-10,3,1);
 W(12,2,0.4,mat.darkWall,-18,1,-38);W(12,2,0.4,mat.darkWall,-18,1,-42);W(0.4,2,4,mat.darkWall,-24,1,-40);W(0.4,2,1,mat.darkWall,-12,1,-38.5);W(0.4,2,1,mat.darkWall,-12,1,-41.5);crate(1.5,1.2,-20,0,-41);crate(1.5,1.2,-16,0,-39);lowWall(-18,-39,4,0);lowWall(-14,-41,2,1);
-W(6,2,0.4,mat.darkWall,28,1,-20);W(4,2,0.4,mat.darkWall,28,1,-26);W(0.4,2,6,mat.darkWall,25,1,-23);crate(1.5,1.2,30,0,-24);lowWall(27,-18,3,0);lowWall(30,-22,2,1);
+W(6,2,0.4,mat.darkWall,28,1,-20);W(4,2,0.4,mat.darkWall,28,1,-26);W(0.4,2,6,mat.darkWall,25,1,-23);W(0.4,2,2,mat.darkWall,31,1,-21);W(0.4,2,2,mat.darkWall,31,1,-25);crate(1.5,1.2,30,0,-24);lowWall(27,-18,3,0);lowWall(30,-22,2,1);
 W(24,3,0.5,mat.wallB,-6,1.5,-42);W(24,3,0.5,mat.wallB,-6,1.5,-34);W(0.5,3,8,mat.wallB,-18,1.5,-38);W(0.5,3,8,mat.wallB,6,1.5,-38);F(24,8,mat.floorMid,-6,-0.05,-38);
 W(14,3,0.5,mat.wallB,26,1.5,32);W(0.5,3,8,mat.wallB,19,1.5,28);W(0.5,3,8,mat.wallB,33,1.5,28);F(14,8,mat.floorLongA,26,-0.05,28);crate(2,1.4,23,0,30,mat.redCrate);crate(1.5,1.2,29,0,31);barrel(27,0,33);barrel(31,0,30);
 {const rp=new THREE.Mesh(new THREE.BoxGeometry(8,0.15,5),new THREE.MeshStandardMaterial({color:0x888888,roughness:0.5}));rp.position.set(28,3.5,-28);rp.castShadow=true;worldScene.add(rp)}
