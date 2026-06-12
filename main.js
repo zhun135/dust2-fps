@@ -64,7 +64,7 @@ W(4,3.5,0.4,mat.darkWall,-2,1.75,19);W(4,3.5,0.4,mat.darkWall,2,1.75,19);W(1.5,0
 F(14,10,mat.platform,0,-0.05,20);crate(1.5,1.5,-3,0,22);crate(2,1,2,0,22,mat.redCrate);crate(1.2,1.3,4,0,21);
 F(8,6,mat.floorLongA,0,0.5,30);W(8,1.2,0.3,mat.wallA,0,1.1,33);W(8,1.2,0.3,mat.wallA,0,1.1,27);crate(1.5,1.6,-2,0.5,31);crate(1.5,1.6,2,0.5,30);
 W(12,3.5,0.4,mat.wallB,-8,1.75,-28);W(0.4,3.5,8,mat.wallB,-14,1.75,-24);W(6,3.5,0.4,mat.wallB,-5,1.75,-20);
-W(3,3.5,0.4,mat.wallB,-8,1.75,-19);W(3,3.5,0.4,mat.wallB,-4,1.75,-19);W(2,0.3,0.4,mat.wallB,-6,3.35,-19);
+W(3,3.5,0.4,mat.wallB,-9,1.75,-19);W(3,3.5,0.4,mat.wallB,-3,1.75,-19);
 F(8,8,mat.floorB,-10,-0.05,-24);
 F(6,6,mat.platform,-10,0.35,-33);W(6,1.5,0.3,mat.wallA,-10,1.1,-36);W(6,1.5,0.3,mat.wallA,-10,1.1,-30);crate(1.5,1.6,-12,0.35,-34);crate(1.5,1.6,-8,0.35,-33);
 W(0.5,5,18,mat.darkWall,16,2.5,-9);W(0.5,5,18,mat.darkWall,24,2.5,-9);F(7.5,18,mat.floorMid,20,-0.05,-9);fallenCabinet(20,-5,0.5);fallenCabinet(22,-12,2);barrel(18,0,-4);barrel(23,0,-14);
@@ -86,11 +86,12 @@ F(10,6,mat.floorCT,-5,-0.05,30);crate(2,1.4,-4,0,32,mat.redCrate);crate(1.5,1.2,
 F(10,8,mat.floorMid,28,-0.05,-28);car(30,-32,0.5,[0xcc7722,0xddaa44]);lowWall(26,-26,3,0);
 F(10,8,mat.floorLongA,-44,-0.05,-38);tree(-42,-35);tree(-46,-39);tree(-40,-41);bench(-44,-36,0.3);bench(-47,-40,1.5);lowWall(-48,-36,4,0);lowWall(-42,-42,4,1.5);lowWall(-40,-35,3,0);
 F(12,10,mat.floorCT,-38,-0.05,-8);crate(1.5,1.5,-35,0,-10);crate(1.2,1,-40,0,-12);crate(1,0.8,-42,0,-7);sandbags(-36,0.1,-4,6);barrel(-40,0,-9);barrel(-38,0,-12);lowWall(-42,-4,3,0.5);lowWall(-34,-10,3,1);
-W(12,2,0.4,mat.darkWall,-18,1,-38);W(12,2,0.4,mat.darkWall,-18,1,-42);W(0.4,2,4,mat.darkWall,-24,1,-40);W(0.4,2,4,mat.darkWall,-12,1,-40);crate(1.5,1.2,-20,0,-41);crate(1.5,1.2,-16,0,-39);lowWall(-18,-39,4,0);lowWall(-14,-41,2,1);
+W(12,2,0.4,mat.darkWall,-18,1,-38);W(12,2,0.4,mat.darkWall,-18,1,-42);W(0.4,2,4,mat.darkWall,-24,1,-40);W(0.4,2,1,mat.darkWall,-12,1,-38.5);W(0.4,2,1,mat.darkWall,-12,1,-41.5);crate(1.5,1.2,-20,0,-41);crate(1.5,1.2,-16,0,-39);lowWall(-18,-39,4,0);lowWall(-14,-41,2,1);
 W(6,2,0.4,mat.darkWall,28,1,-20);W(4,2,0.4,mat.darkWall,28,1,-26);W(0.4,2,6,mat.darkWall,25,1,-23);crate(1.5,1.2,30,0,-24);lowWall(27,-18,3,0);lowWall(30,-22,2,1);
 W(24,3,0.5,mat.wallB,-6,1.5,-42);W(24,3,0.5,mat.wallB,-6,1.5,-34);W(0.5,3,8,mat.wallB,-18,1.5,-38);W(0.5,3,8,mat.wallB,6,1.5,-38);F(24,8,mat.floorMid,-6,-0.05,-38);
 W(14,3,0.5,mat.wallB,26,1.5,32);W(0.5,3,8,mat.wallB,19,1.5,28);W(0.5,3,8,mat.wallB,33,1.5,28);F(14,8,mat.floorLongA,26,-0.05,28);crate(2,1.4,23,0,30,mat.redCrate);crate(1.5,1.2,29,0,31);barrel(27,0,33);barrel(31,0,30);
 {const rp=new THREE.Mesh(new THREE.BoxGeometry(8,0.15,5),new THREE.MeshStandardMaterial({color:0x888888,roughness:0.5}));rp.position.set(28,3.5,-28);rp.castShadow=true;worldScene.add(rp)}
+for(let i=0;i<7;i++){const s=box(1.5,0.15,0.8,mat.concrete);s.position.set(22+i*1,0.15+i*0.5,-28);add(s)}
 {const p1=new THREE.Mesh(new THREE.CylinderGeometry(0.1,0.12,3.5,8),new THREE.MeshStandardMaterial({color:0x666,roughness:0.4}));p1.position.set(24,1.75,-30.5);p1.castShadow=true;add(p1)}
 {const p2=new THREE.Mesh(new THREE.CylinderGeometry(0.1,0.12,3.5,8),new THREE.MeshStandardMaterial({color:0x666,roughness:0.4}));p2.position.set(32,1.75,-25.5);p2.castShadow=true;add(p2)}
 {const pp=new THREE.Mesh(new THREE.BoxGeometry(1.5,0.8,0.6),new THREE.MeshStandardMaterial({color:0xcc3333,roughness:0.3}));pp.position.set(28,0.4,-30);pp.castShadow=true;add(pp)}
@@ -101,19 +102,20 @@ worldScene.add(new THREE.HemisphereLight(0x87ceeb,0x8b6914,0.4));
 // NORTH HOUSES
 F(14,10,mat.floorCT,-10,-0.05,36);
 W(14,2.8,0.4,mat.building,-10,1.4,41);W(0.4,2.8,10,mat.building,-17,1.4,36);W(0.4,2.8,10,mat.building,-3,1.4,36);
+W(5,2.8,0.4,mat.building,-12.5,1.4,31);W(5,2.8,0.4,mat.building,-7.5,1.4,31);
 W(6,2.8,0.4,mat.building,-10,1.4,34);W(6,2.8,0.4,mat.building,-10,1.4,38);W(0.4,2.8,4,mat.building,-7,1.4,36);
 crate(1,0.8,-15,0,40);crate(0.8,0.8,-12,0,38);barrel(-8,0,39);barrel(-13,0,37);
 lowWall(-10,40,4,0);lowWall(-6,38,3,0);
 // SE WAREHOUSE
 F(16,14,mat.floorB,32,-0.05,-36);
 W(16,4,0.4,mat.darkWall,32,2,-29);W(16,4,0.4,mat.darkWall,32,2,-43);
-W(0.4,4,14,mat.darkWall,24,2,-36);W(0.4,4,14,mat.darkWall,40,2,-36);
+W(0.4,4,5,mat.darkWall,24,2,-31.5);W(0.4,4,5,mat.darkWall,24,2,-40.5);
 W(8,4,0.4,mat.darkWall,28,2,-29);W(8,4,0.4,mat.darkWall,36,2,-29);
 crate(2,1.8,28,0,-31,mat.redCrate);crate(1.5,1.5,34,0,-33);crate(1.5,1.5,36,0,-38);crate(1.2,1.2,30,0,-40);
 barrel(26,0,-34);barrel(38,0,-38);barrel(34,0,-42);lowWall(27,-30,3,0);lowWall(36,-32,3,1);
 // NW TOWER
 F(6,6,mat.platform,-55,2.5,-22);
-for(let i=0;i<4;i++){const s=box(4,0.2,2,mat.concrete);s.position.set(-55,0.1+i*0.6+i*0.1,-18-i*1.5);add(s)}
+for(let i=0;i<5;i++){const s=box(4,0.2,2,mat.concrete);s.position.set(-55,0.1+i*0.5,-18-i*1);add(s)}
 W(6,1.2,0.3,mat.wallA,-55,3.1,-19);W(6,1.2,0.3,mat.wallA,-55,3.1,-25);W(0.3,1.2,6,mat.wallA,-52,3.1,-22);W(0.3,1.2,6,mat.wallA,-58,3.1,-22);
 // PLAZA FOUNTAIN
 {const ft=new THREE.Mesh(new THREE.CylinderGeometry(0.8,1,0.3,16),new THREE.MeshStandardMaterial({color:0x888,roughness:0.4}));ft.position.set(0,0.15,0);ft.castShadow=true;add(ft)}
