@@ -150,6 +150,7 @@ addSign(-40,2.5,-34,'CT SPAWN',0);addSign(32,2.5,-25,'T SPAWN',Math.PI);addSign(
 console.log('Map OK');
 
 // WEAPON
+const Mc=(c,r,ml)=>new THREE.MeshStandardMaterial({color:c,roughness:r,metalness:ml});
 const GM=()=>new THREE.MeshStandardMaterial({color:0x2a2a2a,roughness:0.25,metalness:0.85});
 const WM=()=>new THREE.MeshStandardMaterial({color:0x5c3a1e,roughness:0.5,metalness:0.05});
 const DM=()=>new THREE.MeshStandardMaterial({color:0x1a1a1a,roughness:0.3,metalness:0.8});
