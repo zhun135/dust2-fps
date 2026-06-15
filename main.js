@@ -10,14 +10,13 @@ document.addEventListener('keyup',e=>{window.PK.delete(e.code);if(lastWeaponKey=
 document.addEventListener('mousedown',e=>{if(e.button===0)isFiring=true;if(e.button===2&&!reloading&&!switchAnim){isADS=true}e.preventDefault()});
 document.addEventListener('mouseup',e=>{if(e.button===0)isFiring=false;if(e.button===2)isADS=false});
 document.addEventListener('contextmenu',e=>e.preventDefault());
-renderer.domElement.addEventListener('contextmenu',e=>{e.preventDefault();e.stopPropagation()});
 const weapons=[{name:'AK47',mag:30,reserve:90,dmgMin:25,dmgMax:40,fireRate:0.1,reloadT:2.2,spread:0.01,pellets:1,adsFov:55,adsPos:[0,-0.15,-0.35],adsSpreadMult:0.5,adsSensitivity:0.7,scopeType:'reddot'},{name:'SG',mag:8,reserve:32,dmgMin:15,dmgMax:25,fireRate:0.55,reloadT:2.5,spread:0.07,pellets:8,adsFov:65,adsPos:[0.05,-0.18,-0.3],adsSpreadMult:0.8,adsSensitivity:0.85,scopeType:'iron'},{name:'AWP',mag:5,reserve:20,dmgMin:80,dmgMax:100,fireRate:1.2,reloadT:3.0,spread:0.002,pellets:1,adsFov:30,adsPos:[0,-0.12,-0.3],adsSpreadMult:0.3,adsSensitivity:0.4,scopeType:'scope4x'}];
 const euler=new THREE.Euler(0,0,0,'YXZ'),R=0.4,HH=0.75;
 const enemies=[],armorPacks=[],healthPacks=[],speedBoosts=[],smokes=[],shells=[],bloodDrops=[],explosions=[],bulletHoles=[],muzzleFlashes=[];
 let armorSpawnTimer=3,hpSpawnTimer=8,spdSpawnTimer=20,spdBoostActive=0;
 const renderer=new THREE.WebGLRenderer({antialias:true});
 renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;renderer.autoClear=false;document.body.appendChild(renderer.domElement);
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;renderer.autoClear=false;document.body.appendChild(renderer.domElement);renderer.domElement.addEventListener('contextmenu',e=>{e.preventDefault();e.stopPropagation()});
 const worldScene=new THREE.Scene(),weaponScene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,200);camera.position.set(-40,0.9,-32);
 const raycaster=new THREE.Raycaster();
