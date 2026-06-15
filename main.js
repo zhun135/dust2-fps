@@ -227,6 +227,7 @@ const f=new THREE.Mesh(new THREE.ConeGeometry(0.02,0.08,8),new THREE.MeshBasicMa
 return{group:g,recoilG:r,flash:f,mag}}
 function switchWeapon(nw){if(nw===currentWeapon||switchAnim)return;switchAnim={old:currentWeapon,new:nw,progress:0,duration:0.3};isFiring=false}
 let switchAnim=null;
+weaponModels[0]=createAK47();weaponModels[1]=createSG();weaponModels[2]=createAWP();for(let i=0;i<3;i++){weaponModels[i].group.visible=(i===0);weaponScene.add(weaponModels[i].group)}weaponGroup=weaponModels[0].group;recoilG=weaponModels[0].recoilG;flash=weaponModels[0].flash;magMesh=weaponModels[0].mag;weaponScene.add(new THREE.AmbientLight(0xffffff,1));const wl=new THREE.DirectionalLight(0xffffff,1.2);wl.position.set(0.5,1.5,-2);weaponScene.add(wl);console.log('Weapon OK');
 
 // ARMOR
 const armorSpawnPoints=[[0,0,22],[-5,0,18],[5,0,15],[-10,0,10],[10,0,8],[-15,0,0],[15,0,-5],[-20,0,-10],[20,0,-18],[-25,0,-15],[25,0,-22],[-8,0,-20],[-50,0,-15],[-45,0,-10],[45,0,-22],[48,0,-12],[-10,0,-38],[2,0,-40],[26,0,30],[30,0,28]];
