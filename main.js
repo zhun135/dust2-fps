@@ -3,7 +3,7 @@ window.PK=new Set();
 let lastWeaponKey=null;
 document.addEventListener('keydown',e=>{window.PK.add(e.code);if(['KeyW','KeyA','KeyS','KeyD','Space','ShiftLeft','ShiftRight','KeyR','KeyF'].includes(e.code))e.preventDefault();if(['Digit1','Digit2','Digit3','KeyQ'].includes(e.code)&&lastWeaponKey!==e.code){lastWeaponKey=e.code;if(e.code==='Digit1')switchWeapon(0);if(e.code==='Digit2')switchWeapon(1);if(e.code==='Digit3')switchWeapon(2);if(e.code==='KeyQ')switchWeapon((currentWeapon+1)%3)}});
 document.addEventListener('keyup',e=>{window.PK.delete(e.code);if(lastWeaponKey===e.code)lastWeaponKey=null});
-document.addEventListener('mousedown',e=>{if(e.button===0)isFiring=true;if(e.button===2&&!reloading&&!switchAnim&&grounded){isADS=true}e.preventDefault()});
+document.addEventListener('mousedown',e=>{if(e.button===0)isFiring=true;if(e.button===2&&!reloading&&!switchAnim){isADS=true}e.preventDefault()});
 document.addEventListener('mouseup',e=>{if(e.button===0)isFiring=false;if(e.button===2)isADS=false});
 document.addEventListener('contextmenu',e=>e.preventDefault());
 renderer.domElement.addEventListener('contextmenu',e=>{e.preventDefault();e.stopPropagation()});
