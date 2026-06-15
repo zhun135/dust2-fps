@@ -213,7 +213,6 @@ const tt=new THREE.Mesh(new THREE.CylinderGeometry(0.012,0.012,0.025,8),AM());tt
 sg.add(new THREE.Mesh(new THREE.CylinderGeometry(0.023,0.025,0.06,12),DM())).position.z=-0.14;
 for(let i=0;i<4;i++){const mt=new THREE.Mesh(new THREE.BoxGeometry(0.008,0.025,0.03),AM());mt.position.set((i%2?-0.015:0.015),-0.02,i<2?-0.04:0.04);sg.add(mt)}
 sg.position.set(0,0.055,-0.22);r.add(sg);
-const mag=new THREE.Group();mag.add(new THREE.Mesh(new THREE.BoxGeometry(0.032,0.08,0.04),DM()));mag.add(new THREE.Mesh(new THREE.BoxGeometry(0.035,0.008,0.043),AM())).position.y=-0.044;mag.position.set(0,-0.15,-0.18);r.add(mag);mag.visible=false;
 const gr2=new THREE.Mesh(new THREE.BoxGeometry(0.038,0.085,0.038),SM());gr2.position.set(0,-0.06,-0.02);gr2.rotation.x=-0.15;r.add(gr2);
 for(let i=0;i<4;i++){const fg=new THREE.Mesh(new THREE.BoxGeometry(0.04,0.006,0.04),DM());fg.position.set(0,-0.035-i*0.018,-0.02);fg.rotation.x=-0.15;r.add(fg)}
 const bp=new THREE.Group();for(let s=-1;s<=1;s+=2){const l=new THREE.Mesh(new THREE.CylinderGeometry(0.004,0.004,0.12,6),AM());l.position.set(s*0.025,-0.06,0);l.rotation.z=s*0.3;bp.add(l);bp.add(new THREE.Mesh(new THREE.CylinderGeometry(0.008,0.01,0.01,6),DM())).position.set(s*0.025+s*0.02,-0.12,0)}bp.position.set(0,-0.02,-0.35);r.add(bp);
@@ -222,7 +221,7 @@ const sb3=new THREE.Mesh(new THREE.BoxGeometry(0.04,0.06,0.12),SM());sb3.positio
 r.add(new THREE.Mesh(new THREE.BoxGeometry(0.045,0.02,0.08),SM())).position.set(0,0.04,0.2);
 r.add(new THREE.Mesh(new THREE.BoxGeometry(0.042,0.065,0.015),new THREE.MeshStandardMaterial({color:0x111,roughness:0.9,metalness:0}))).position.set(0,0,0.285);
 const f=new THREE.Mesh(new THREE.ConeGeometry(0.02,0.08,8),new THREE.MeshBasicMaterial({color:0xffaa00,transparent:true,opacity:0,depthTest:false}));f.rotation.x=Math.PI/2;f.position.set(0,0.015,-0.9);r.add(f);
-return{group:g,recoilG:r,flash:f,mag}}
+return{group:g,recoilG:r,flash:f,mag:null}}
 function switchWeapon(nw){if(nw===currentWeapon||switchAnim)return;switchAnim={old:currentWeapon,new:nw,progress:0,duration:0.3};isFiring=false}
 let switchAnim=null;
 weaponModels[0]=createAK47();weaponModels[1]=createSG();weaponModels[2]=createAWP();for(let i=0;i<3;i++){weaponModels[i].group.visible=(i===0);weaponScene.add(weaponModels[i].group)}weaponGroup=weaponModels[0].group;recoilG=weaponModels[0].recoilG;flash=weaponModels[0].flash;magMesh=weaponModels[0].mag;weaponScene.add(new THREE.AmbientLight(0xffffff,1));const wl=new THREE.DirectionalLight(0xffffff,1.2);wl.position.set(0.5,1.5,-2);weaponScene.add(wl);console.log('Weapon OK');
