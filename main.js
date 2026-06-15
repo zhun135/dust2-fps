@@ -16,7 +16,7 @@ const enemies=[],armorPacks=[],healthPacks=[],speedBoosts=[],smokes=[],shells=[]
 let armorSpawnTimer=3,hpSpawnTimer=8,spdSpawnTimer=20,spdBoostActive=0;
 const renderer=new THREE.WebGLRenderer({antialias:true});
 renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;renderer.autoClear=false;document.body.appendChild(renderer.domElement);renderer.domElement.addEventListener('contextmenu',e=>{e.preventDefault();e.stopPropagation()});
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;renderer.autoClear=false;document.body.appendChild(renderer.domElement);renderer.domElement.oncontextmenu=()=>false;renderer.domElement.style.touchAction='none';renderer.domElement.addEventListener('contextmenu',e=>{e.preventDefault();e.stopPropagation()});
 const worldScene=new THREE.Scene(),weaponScene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,200);camera.position.set(-40,0.9,-32);
 const raycaster=new THREE.Raycaster();
